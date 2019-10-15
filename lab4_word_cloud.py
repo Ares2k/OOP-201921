@@ -4,7 +4,6 @@
 # date: 10-10-2019
 # purpose: Lab 4
 
-#testing
 class WordCloud:
 
     # initialises everything
