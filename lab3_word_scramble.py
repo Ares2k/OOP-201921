@@ -20,7 +20,13 @@ class WordScramble:
         # and the last two
         # this only makes sense if you have a world that is longer than 3
 
+        words = list(self.user_input)
+        words[0], words[1] = words[1], words[0]
+        words[-1], words[-2] = words[-2], words[-1]
 
+        w = ''.join(words)
+
+        print(w)
         # now try to scramble one sentence
         # do just words first, then you can move on to work on
         # punctuation
