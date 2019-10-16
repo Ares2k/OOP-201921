@@ -47,27 +47,28 @@ class Types_and_Strings:
 
         # append a new element to the list and print
         list_string.append('g')
-        #print(list_string)
+        print(list_string)
 
         # remove from the list in 3 ways
         list_string.remove('i')
         list_string.pop(2)
         del list_string[2]
 
-        print(list_string)
         # check if the word cake is in your input list
-        if 'man' in list_string:
-            print('\nfound')
+        if 'cake' in list_string:
+            print('\nWord found')
+        else:
+            print('\nWord not found')
 
         # reverse the items in the list and print
         list_string[0], list_string[1] = list_string[1], list_string[0]
         print(list_string)
 
         # reverse the list with the slicing trick
-        list_string[::-1]
+        my_list = list_string[::-1]
 
         # print the list 3 times by using multiplication
-
+        print(my_list * 3)
 
 tas = Types_and_Strings()
 tas.play_with_strings()

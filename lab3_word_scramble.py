@@ -31,6 +31,15 @@ class WordScramble:
         # do just words first, then you can move on to work on
         # punctuation
 
+        #welcome to my house
+
+        for i in range(0, len(words), 3):
+            if i < len(words) - 2:
+                print(i)
+                words[i], words[i+1] = words[i+1], words[i]
+
+        print (words)
+
 word_scrambler = WordScramble()
 word_scrambler.scramble()
 
