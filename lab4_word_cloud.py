@@ -19,6 +19,8 @@ class WordCloud:
     # it helps to multiply the key/occurance of word number with 10
     # in order to get a decent size output in the html
     def create_html(self, the_dict):
+        self.the_dict = the_dict
+
         fo = open("output.html", "w")
         fo.write('<!DOCTYPE html>\
             <html>\
@@ -29,7 +31,10 @@ class WordCloud:
             <body>\
             <div style="text-align: center; vertical-align: middle; font-family: arial; color: white; background-color:black; border:1px solid black">')
 
-        # your code goes here!
+        for word in self.the_dict:
+            size = self.the_dict[word] * 10
+            fo.write(f'<span style="font-size: {size}px">{word} </span>')
+
         fo.write('<span style="font-size: 10px"> HELLO </span>')
 
         fo.write('</div>\
@@ -47,7 +52,12 @@ class WordCloud:
     # returns a dictionary
     def create_dict(self):
         my_dict = {}
-        # your code goes here:
+
+        with open('gettisburg.txt', 'r') as file:
+            data = file.read()
+
+            for word in data.split():
+                self.add_to_dict(word, my_dict)
 
         return my_dict
 
@@ -59,8 +69,13 @@ class WordCloud:
     # word occurance counter to 1
     # returns a dictionary
     def add_to_dict(self, word, the_dict):
-        # your code goes here
+        self.the_dict = the_dict
 
+        if word in self.the_dict:
+            self.the_dict[word] += 1
+        else:
+            self.the_dict[word] = 1
+        
         return the_dict
 
 
